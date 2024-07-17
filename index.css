@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Karla';
+    src: url(Karla/Karla-VariableFont_wght.ttf) ;
+  }
+
+body {
+    margin: 0;
+    font-family: Karla;
+}
+
+.main {
+    background-color: #ECFDF5;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.open {
+    border-bottom: 1px solid #D5D4D8;
+}
+
+.pass {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    padding-top: 90px;
+    color: #2B283A;
+    font-weight: 900;
+    font-size: 40;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #6B7280;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+span {
+    color: #10B981;
+}
+
+button {
+    color: #FFFFFF;
+    background-color: #10B981;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 5px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+#pass1, #pass2 {
+    background-color: #2B283A;
+    color: #5DEF92;
+    margin-top: 30px;
+    width: 200px;
+    height: 33px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 33px;
+}
