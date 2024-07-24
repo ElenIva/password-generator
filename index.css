@@ -30,6 +30,7 @@ body {
 
 #length {
     grid-column: 3/5;
+    width: 80%;
 }
 
 
