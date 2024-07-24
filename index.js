@@ -1,31 +1,53 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-    "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-     "~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
+const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const symbols = "!@#$%^&*()_+-=[]{}\\|;':\",./<>?";
 
+const lengthEl = document.getElementById("length");
+const lowercaseEl = document.getElementById("lowercase");
+const uppercaseEl = document.getElementById("uppercase");
+const numbersEl = document.getElementById("numbers");
+const symbolsEl = document.getElementById("symbols");
 
 function generate() {
-    let passRightArr = []
-    let passLeftArr = []
+    let characters = ""
     let passRight = ""
     let passLeft = ""
     let pass1 = document.getElementById("pass1")
-    let pass2 = document.getElementById("pass2")   
+    let pass2 = document.getElementById("pass2")  
+    const length = lengthEl.value
 
-    for (let i = 0; i < 15; i++) {
-        passRightArr.push(characters[Math.floor(Math.random() * characters.length)])
-        passLeftArr.push(characters[Math.floor(Math.random() * characters.length)])
+    if (lowercaseEl.checked) {
+        characters += lowercaseLetters
     }
 
-    for (let j = 0; j < 15; j++) {
-        passRight += passRightArr[j]
-        passLeft += passLeftArr[j]
+    if (uppercaseEl.checked) {
+        characters += uppercaseLetters
+    }
+    
+    if (numbersEl.checked) {
+        characters += numbers
+    }
+    
+    if (symbolsEl.checked) {
+        characters += symbols
+    }
+    
+    for (let i = 0; i < length; i++) {
+
+        passRight += characters.charAt(Math.floor(Math.random() * characters.length))
+        passLeft += characters.charAt(Math.floor(Math.random() * characters.length))
     }
 
     pass1.textContent = passRight
     pass2.textContent = passLeft
 }
 
+document.getElementById("length").addEventListener("input", function(value) {
+    if(event.target.value < 8) {event.target.value = 8}
+    else if(event.target.value > 20) {event.target.value = 20}
+
+})
 
 
 
